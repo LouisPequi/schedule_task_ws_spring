@@ -1,20 +1,27 @@
 package com.pequignot.scheduletaskws.model.dto;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 import java.util.List;
 
+@Getter
+@Setter
+@Builder
 public class TaskDto {
 
-    public long id;
-    public long id_group;
-    public String name;
-    public String description;
-    public int occur;
-    public String freq;
-    public int order;
-    public Date dateCrea;
-    public Date dateModif;
-    public String user;
-    public int criticity;
+    private long id;
+    private long id_group;
+    private String name;
+    private String description;
+    private int occur;
+    private String freq;
+    private int order;
+    private Date dateCrea;
+    private Date dateModif;
+    private String util;
+    private int criticity;
 }
 

@@ -1,11 +1,13 @@
 package com.pequignot.scheduletaskws.controller;
 
-import com.pequignot.scheduletaskws.model.Group;
 import com.pequignot.scheduletaskws.model.TaskHistory;
+import com.pequignot.scheduletaskws.model.dto.GroupDto;
 import com.pequignot.scheduletaskws.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/groups")
@@ -15,7 +17,7 @@ public class GroupController {
     private GroupService service;
 
     @GetMapping("/")
-    public Iterable<Group> getGroups() {
+    public List<GroupDto> getGroups() {
         return this.service.getGroups();
     }
 

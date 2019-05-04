@@ -2,12 +2,15 @@ package com.pequignot.scheduletaskws.service;
 
 import com.pequignot.scheduletaskws.model.Group;
 import com.pequignot.scheduletaskws.model.TaskHistory;
+import com.pequignot.scheduletaskws.model.dto.GroupDto;
 import org.springframework.data.domain.Page;
 
-public interface GroupService {
-    Iterable<Group> getGroups();
+import java.util.List;
 
-    long getCriticity(Integer id);
+public interface GroupService {
+    List<GroupDto> getGroups();
+
+    Integer getCriticity(Integer id);
 
     Page<TaskHistory> getHistory(Integer id);
 }

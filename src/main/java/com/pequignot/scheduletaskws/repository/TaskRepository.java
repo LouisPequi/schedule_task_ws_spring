@@ -8,9 +8,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 
 public interface TaskRepository extends CrudRepository<Task, Integer> {
 
     @Query("SELECT h FROM TaskHistory h WHERE h.idTask = :idTask ORDER BY h.date DESC")
     Page<TaskHistory> findHistory(@Param("idTask") Integer idTask, Pageable page);
+
+    List<Task> findByIdGroup(Integer idGroup);
 }

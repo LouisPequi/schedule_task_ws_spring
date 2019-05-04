@@ -7,7 +7,7 @@ import java.util.Date;
 @Table(name="task_history")
 public class TaskHistory {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer idTask;
     private Date date;
